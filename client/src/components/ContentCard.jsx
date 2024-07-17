@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "./ContentCard.scss";
 
 function ContentCard({ imageSrc, title, description }) {
