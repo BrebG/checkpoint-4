@@ -1,0 +1,42 @@
+@import "../style/style.scss";
+
+.content-card-container {
+  padding-block: 2rem;
+  margin: 0 auto;
+  max-width: 85ch;
+  padding-inline: 2rem;
+  @include flex(column, flex-start, flex-start, 24px);
+
+  h2,
+  h3,
+  h4 {
+    font-family: "Josefin Sans", sans-serif;
+  }
+
+  p {
+    font-family: "Jost", sans-serif;
+  }
+
+  .img-container {
+    padding-top: 2rem;
+    margin: 0 auto;
+    width: 20rem;
+  }
+
+  .text-container {
+    width: 100%;
+
+    h2 {
+      text-align: center;
+      font-size: $fontSize2;
+    }
+
+    p {
+      padding-block: 1rem;
+    }
+  }
+
+  @include mq($breakpoint: 768px) {
+    @include flex(row, center, center, 24px);
+  }
+}

@@ -1,0 +1,28 @@
+@import "../style/style.scss";
+
+.footer-container {
+  background-color: $green;
+  @include flex(column, center, center, $spacingDouble);
+  padding: 1rem;
+  margin-top: 2rem;
+
+  .cgu {
+    @include flex(row, center, center, $spacing);
+  }
+
+  .menu {
+    @include flex(column, center, center, $spacing);
+
+    @include mq($breakpoint: 768px) {
+      @include flex(row, center, center, 24px);
+    }
+  }
+
+  .socials {
+    @include flex(row, center, center, $spacing);
+  }
+
+  a {
+    font-family: "Josefin Sans", sans-serif;
+  }
+}

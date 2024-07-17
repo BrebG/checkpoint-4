@@ -1,0 +1,25 @@
+@import "../reset.scss";
+@import "../style/style.scss";
+
+header {
+  min-height: 40dvh;
+  width: 100dvw;
+  background-image: url("../assets/images/banner.webp");
+  background-position: center;
+  background-size: cover;
+  @include flex(column, flex-start, flex-start, 24px);
+
+  blockquote {
+    padding-inline: 2rem;
+    font-size: $fontSize2;
+    color: whitesmoke;
+  }
+
+  blockquote:first-of-type {
+    padding-top: 2rem;
+  }
+}
+
+body {
+  background-color: $backgroundColor;
+}

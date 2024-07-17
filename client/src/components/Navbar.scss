@@ -1,0 +1,71 @@
+@import "../style/style.scss";
+
+.navbar {
+  color: $darkGreen;
+  box-shadow: 0px 5px 50px $darkGreen;
+
+  h1 {
+    font-size: $fontSize1;
+    font-family: "Josefin Sans", sans-serif;
+  }
+
+  a {
+    color: #423a3a;
+    margin: 0;
+    font-family: "Jost", sans-serif;
+  }
+
+  img {
+    padding: 0.5rem;
+    min-width: 64px;
+  }
+
+  @include flex(row, space-between, center, $spacing);
+
+  @include mq() {
+    @include flex(row, space-between, center, $spacing);
+  }
+
+  max-height: 5rem;
+  background-color: $green;
+
+  .burger {
+    @include flex(row, center, center, 0);
+    width: 5rem;
+    height: 5rem;
+    background-color: $green;
+  }
+
+  .home {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .links {
+    @include flex(column, center, center, 0);
+
+    @include mq() {
+      @include flex(row, center, center, 5dvw);
+      position: initial;
+    }
+
+    background-color: $green;
+    position: absolute;
+    z-index: 1;
+    width: 100dvw;
+
+    li {
+      @include flex(row, center, center, 0);
+
+      @include mq() {
+        border-bottom: none;
+      }
+
+      height: 3rem;
+      border-bottom: 1px solid $darkGreen;
+      width: 100%;
+      text-align: center;
+      align-content: center;
+    }
+  }
+}
