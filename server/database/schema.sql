@@ -1,62 +1,48 @@
-create table user (
-  id int unsigned primary key auto_increment not null,
-  email varchar(255) not null unique,
-  username varchar(255) not null
-);
-
-CREATE TABLE blog_category (
-  id INT NOT NULL PRIMARY KEY auto_increment,
-  alimentation TINYINT(1) NOT NULL DEFAULT 0,
-  phytotherapy TINYINT(1) NOT NULL DEFAULT 0,
-  aromatherapy TINYINT(1) NOT NULL DEFAULT 0,
-  naturopathy TINYINT(1) NOT NULL DEFAULT 0
-  );
-
-  CREATE TABLE article (
+CREATE TABLE article (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  title VARCHAR(255) NOT NULL,
-  content LONGTEXT NOT NULL,
+  username varchar(255) not null,
+  title varchar(255) not null,
+  category varchar(255),
   publication_date DATETIME NOT NULL,
   edit_date DATETIME NULL,
-  blog_category_id INT NOT NULL,
-  user_id INT unsigned NOT NULL,
-  CONSTRAINT fk_article_blog_category
-    FOREIGN KEY (blog_category_id)
-    REFERENCES blog_category (id)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT fk_article_user1
-    FOREIGN KEY (user_id)
-    REFERENCES user (id)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-    );
+  content LONGTEXT NOT NULL,
+  image_url varchar(255),
+  alt_text varchar(255)
+);
 
 
 CREATE TABLE review (
   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  username varchar(255) not null,
+  email varchar(255) not null,
+  title varchar(255) not null,
   publication_date DATETIME NOT NULL,
   edit_date DATETIME NULL,
-  content LONGTEXT NOT NULL,
-  user_id INT unsigned NOT NULL,
-  article_id INT NOT NULL,
-  CONSTRAINT fk_review_user
-    FOREIGN KEY (user_id)
-    REFERENCES user (id)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT fk_review_article
-    FOREIGN KEY (article_id)
-    REFERENCES article (id)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-    );
+  content LONGTEXT NOT NULL
+);
 
 CREATE TABLE message (
   id INT PRIMARY KEY NOT NULL auto_increment,
   username VARCHAR(90) NOT NULL,
   email VARCHAR(255) NOT NULL,
+  title VARCHAR(90) NOT NULL,
   message LONGTEXT NOT NULL,
   topic VARCHAR(45) NOT NULL,
   sending_time DATETIME NOT NULL
+);
+
+CREATE TABLE about (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  title varchar(255) NOT NULL,
+  content LONGTEXT NOT NULL,
+  image_url varchar(255),
+  alt_text varchar(255)
+);
+
+CREATE TABLE consultation (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  title varchar(255) NOT NULL,
+  content LONGTEXT NOT NULL,
+  image_url varchar(255),
+  alt_text varchar(255)
 );

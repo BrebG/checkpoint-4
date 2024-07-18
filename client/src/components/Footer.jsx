@@ -29,7 +29,7 @@ function Footer() {
     <div className="footer-container">
       <div className="menu">
         {paths.map((path, index) => (
-          <NavLink key={index.id} to={path}>
+          <NavLink key={`nav-${path}`} to={path}>
             {labels[index]}
           </NavLink>
         ))}
@@ -41,7 +41,7 @@ function Footer() {
       </div>
       <div className="cgu">
         {pathsCGU.map((path, index) => (
-          <NavLink className="navlink" key={index.id} to={path}>
+          <NavLink className="navlink" key={`cgu-${path}`} to={path}>
             {labelsCGU[index]}
           </NavLink>
         ))}

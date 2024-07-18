@@ -12,7 +12,7 @@ const {
   browse,
   read,
   destroy,
-} = require("../../../controllers/contactFormActions");
+} = require("../../../controllers/messageFormActions");
 
 // Route to get a list of items
 router.get("/", browse);

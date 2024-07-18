@@ -1,0 +1,31 @@
+@import "../style/style.scss";
+
+form {
+  @include flex(column, center, center, $spacing);
+  padding: 1rem;
+  max-width: 85ch;
+  width: 100%;
+
+  input {
+    max-width: 65ch;
+  }
+
+  textarea {
+    max-width: 65ch;
+    height: 10rem;
+  }
+
+  h3 {
+    color: $darkGreen;
+  }
+
+  p {
+    color: $darkGreen;
+    word-break: break-word;
+    width: 100%;
+
+    &:nth-child(3) {
+      text-align: end;
+    }
+  }
+}

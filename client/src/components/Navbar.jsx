@@ -27,7 +27,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleResize = () =>
-      window.innerWidth > 768 ? setDevice("desktop") : setDevice("mobile");
+      window.innerWidth > 820 ? setDevice("desktop") : setDevice("mobile");
 
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -40,12 +40,14 @@ function Navbar() {
       <Link to="/" onClick={() => setIsOpen(!isOpen)}>
         <img className="home" src={logo} alt="Logo upya" />
       </Link>
-      <h1>L'Herboripathe</h1>
+      <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <h1>L'Herboripathe</h1>
+      </Link>
       {device === "mobile" ? (
         <>
           <motion.ul
             initial={{ y: -200 }}
-            animate={{ y: !isOpen ? -200 : 105 }}
+            animate={{ y: !isOpen ? -200 : 175 }}
             className="links"
           >
             {paths.map((path, index) => (

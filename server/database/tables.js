@@ -1,5 +1,9 @@
 // Import the repository modules responsible for handling data operations on the tables
 const ContactFormRepository = require("./models/ContactFormRepository");
+const ArticleRepository = require("./models/ArticleRepository");
+const ReviewRepository = require("./models/ReviewRepository");
+const AboutRepository = require("./models/AboutRepository");
+const ConsultationRepository = require("./models/ConsultationRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
@@ -10,6 +14,10 @@ const tables = {};
 
 // Register each repository as data access point for its table
 tables.message = new ContactFormRepository();
+tables.article = new ArticleRepository();
+tables.review = new ReviewRepository();
+tables.about = new AboutRepository();
+tables.consultation = new ConsultationRepository();
 
 /* ************************************************************************* */
 

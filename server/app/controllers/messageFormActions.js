@@ -6,6 +6,8 @@ const browse = async (req, res, next) => {
 
     res.json(message);
   } catch (err) {
+    console.error(err);
+    res.status(500).send("Error retrieving messages");
     next(err);
   }
 };

@@ -1,11 +1,10 @@
 @import "../style/style.scss";
 
-.content-card-container {
+.section-card-container {
   padding-block: 2rem;
   margin: 0 auto;
-  max-width: 85ch;
   padding-inline: 2rem;
-  @include flex(column, flex-start, flex-start, 24px);
+  @include flex(column, flex-start, center, 24px);
 
   h2,
   h3,
@@ -24,7 +23,9 @@
   }
 
   .text-container {
+    @include flex(column, center, center, $spacing);
     width: 100%;
+    max-width: 65ch;
 
     h2 {
       text-align: center;
@@ -33,10 +34,16 @@
 
     p {
       padding-block: 1rem;
+      max-width: 65ch;
     }
   }
 
   @include mq() {
     @include flex(row, center, center, 24px);
+    width: 80dvw;
+
+    &.odd {
+      flex-direction: row-reverse;
+    }
   }
 }
