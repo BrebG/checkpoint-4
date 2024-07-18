@@ -51,3 +51,12 @@ CREATE TABLE review (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
     );
+
+CREATE TABLE message (
+  id INT PRIMARY KEY NOT NULL auto_increment,
+  username VARCHAR(90) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  message LONGTEXT NOT NULL,
+  topic VARCHAR(45) NOT NULL,
+  sending_time DATETIME NOT NULL
+);

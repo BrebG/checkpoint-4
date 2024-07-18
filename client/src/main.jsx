@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import About from "./pages/About";
 import Reviews from "./pages/Reviews";
-import Contact from "./pages/Contact";
+import Contact, { postMessageToAdmin } from "./pages/Contact";
 import Consult from "./pages/Consult";
 import Blog from "./pages/Blog";
 import NavbarLayout from "./components/NavbarLayout";
@@ -31,6 +31,7 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+        action: postMessageToAdmin,
       },
       {
         path: "/consultation",
