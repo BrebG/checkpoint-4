@@ -17,7 +17,7 @@ $spacingDouble: $spacing * 2;
   gap: $gap;
 }
 
-@mixin mq($breakpoint: 768px) {
+@mixin mq($breakpoint: 820px) {
   @media screen and (min-width: $breakpoint) {
     @content;
   }

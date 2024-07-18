@@ -1,8 +1,8 @@
 const AbstractRepository = require("./AbstractRepository");
 
-class ContactFormRepository extends AbstractRepository {
+class AboutRepository extends AbstractRepository {
   constructor() {
-    super({ table: "message" });
+    super({ table: "about" });
   }
 
   async readAll() {
@@ -18,19 +18,20 @@ class ContactFormRepository extends AbstractRepository {
     return rows[0];
   }
 
-  async create(message) {
+  async create(section) {
     const [result] = await this.database.query(
-      `insert into ${this.table} (username, email, title, message, topic, sending_time) values (?, ?, ?, ?, ?, NOW())`,
-      [
-        message.username,
-        message.email,
-        message.title,
-        message.message,
-        message.topic,
-      ]
+      `INSERT INTO ${this.table} (title, content, image_url, alt_text) VALUES (?, ?, ?, ?)`,
+      [section.title, section.content, section.imageUrl, section.altText]
     );
-
     return result.insertId;
+  }
+
+  async update(id, section) {
+    const [result] = await this.database.query(
+      `UPDATE ${this.table} SET title = ?, content = ?, image_url = ?, alt_text = ? WHERE id = ?`,
+      [section.title, section.content, section.imageUrl, section.altText, id]
+    );
+    return result.affectedRows > 0;
   }
 
   async delete(id) {
@@ -42,4 +43,4 @@ class ContactFormRepository extends AbstractRepository {
   }
 }
 
-module.exports = ContactFormRepository;
+module.exports = AboutRepository;

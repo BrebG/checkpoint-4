@@ -1,0 +1,19 @@
+@import "../style/style.scss";
+
+.about-page-container {
+  @include flex(column, center, center, $spacingDouble);
+  padding-block: 2rem;
+  min-height: calc(100dvh - 224px);
+  max-width: 100dvw;
+  padding-inline: 1rem;
+
+  h2 {
+    font-size: $fontSize2;
+  }
+}
+
+.edit-button-container {
+  @include flex(column, center, flex-end, 0);
+  width: 100dvw;
+  padding: 1rem;
+}

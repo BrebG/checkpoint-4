@@ -7,8 +7,16 @@ const router = express.Router();
 /* ************************************************************************* */
 
 const contactFormRouter = require("./contactForm/router");
+const articleRouter = require("./article/router");
+const reviewRouter = require("./review/router");
+const aboutRouter = require("./about/router");
+const consultationRouter = require("./consultation/router");
 
-router.use("/contact", contactFormRouter);
+router.use("/message", contactFormRouter);
+router.use("/article", articleRouter);
+router.use("/review", reviewRouter);
+router.use("/about", aboutRouter);
+router.use("/consultation", consultationRouter);
 
 /* ************************************************************************* */
 
