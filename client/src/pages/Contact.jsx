@@ -3,21 +3,57 @@ import "../style/button.scss";
 import "../style/input.scss";
 import { Form } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import { useEffect, useState } from "react";
+import MessageList from "../components/MessageList";
 
 const hostUrl = import.meta.env.VITE_API_URL;
 
 function ContactForm() {
+  const [messages, setMessages] = useState([]);
+  const [showMessages, setShowMessages] = useState(false);
+
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const response = await fetch(`${hostUrl}/api/message`);
+      const data = await response.json();
+      setMessages(data);
+    };
+
+    fetchMessages();
+  }, []);
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`${hostUrl}/api/message/${id}`, { method: "DELETE" });
+      setMessages(messages.filter((message) => message.id !== id));
+    } catch (error) {
+      console.error("Error deleting message:", error);
+    }
+  };
+
   return (
     <>
       <div className="contact-form-div">
+        {showMessages && (
+          <MessageList messages={messages} onDelete={handleDelete} />
+        )}
+        <div className="edit-button-container">
+          <button
+            type="button"
+            className="button-sm-everglade-outlined edit-mode-button"
+            onClick={() => setShowMessages(!showMessages)}
+          >
+            {showMessages ? "Masquer les messages" : "Afficher les messages"}
+          </button>
+        </div>
+
         <Form method="post">
           <h2>Me contacter</h2>
           <section className="name">
-            <label htmlFor="username">Nom d"utilisateur</label>
+            <label htmlFor="username">Nom d'utilisateur</label>
             <input
               id="username"
               name="username"
-              placeholder="Entrer votre nom d'utilisateur"
+              placeholder="Entrez votre nom d'utilisateur"
               className="input-sm-gray-outlined"
               required
             />
@@ -28,7 +64,7 @@ function ContactForm() {
             <input
               id="email"
               name="email"
-              placeholder="Entrer votre adresse mail"
+              placeholder="Entrez votre adresse mail"
               className="input-sm-gray-outlined"
               required
             />
@@ -54,10 +90,6 @@ function ContactForm() {
               />
               <label htmlFor="follow-up" className="button-md-olive-outlined">
                 Suivi post-consultation
-              </label>
-              <input id="review" type="radio" name="topic" value="avis" />
-              <label htmlFor="review" className="button-md-olive-outlined">
-                Laisser un avis
               </label>
             </div>
           </section>

@@ -41,7 +41,7 @@ function ReviewForm({ onSubmit }) {
         name="username"
         value={newReview.username}
         onChange={handleInputChange}
-        placeholder="Votre pseudo"
+        placeholder="Votre nom d'utilisateur"
         required
       />
       <input

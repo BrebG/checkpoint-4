@@ -28,7 +28,7 @@ function ReviewCard({
             className="button-sm-everglade-outlined"
             onClick={() => onEdit(id)}
           >
-            Edit
+            Modifier les sections
           </button>
           <button
             type="button"
@@ -57,7 +57,5 @@ ReviewCard.propTypes = {
   onEdit: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
 };
-
-
 
 export default ReviewCard;

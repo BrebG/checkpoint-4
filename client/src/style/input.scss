@@ -29,6 +29,7 @@ $inputs: (
   border-radius: map-get($input-styles, borderRadius);
   gap: map-get($input-styles, gap);
   background-color: var(--white-500);
+  white-space: pre-wrap;
 
   width: 100%;
   display: grid;
