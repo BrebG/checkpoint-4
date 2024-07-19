@@ -1,6 +1,5 @@
 import "./ReviewCard.scss";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 function MessageList({ messages, onDelete }) {
   return (

@@ -1,0 +1,25 @@
+@import "../style/style.scss";
+
+.legal-container {
+  @include flex(column, center, center, $spacingDouble);
+  padding-block: 2rem;
+  padding-inline: 1rem;
+  width: 100%;
+
+  h2 {
+    font-size: $fontSize1;
+  }
+
+  h3 {
+    font-size: $fontSize2;
+  }
+
+  .text-container {
+    @include flex(column, center, flex-start, $spacingDouble);
+    max-width: 65ch;
+  }
+
+  @include mq() {
+    @include flex(column, center, center, $spacingDouble);
+  }
+}

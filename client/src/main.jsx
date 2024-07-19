@@ -10,6 +10,8 @@ import Contact, { postMessageToAdmin } from "./pages/Contact";
 import Consult from "./pages/Consult";
 import Blog from "./pages/Blog";
 import NavbarLayout from "./components/NavbarLayout";
+import CGV from "./pages/CGV";
+import MentionsLegales from "./pages/MentionsLegales";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/cgv",
+        element: <CGV />,
+      },
+      {
+        path: "/mentions-legales",
+        element: <MentionsLegales />,
       },
     ],
   },
