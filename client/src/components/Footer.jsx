@@ -22,7 +22,7 @@ function Footer() {
     "Blog",
   ];
 
-  const pathsCGU = ["/mentions-legales", "/cgu"];
+  const pathsCGU = ["/mentions-legales", "/cgv"];
   const labelsCGU = ["Mentions légales", "Conditions générales de vente"];
 
   return (
@@ -35,13 +35,20 @@ function Footer() {
         ))}
       </div>
       <div className="socials">
-        <img src={linkedIn} alt="icone linkedIn" />
-        <img src={facebook} alt="icone facebook" />
-        <img src={instagram} alt="icone instagram" />
+        <a href="https://www.linkedin.com">
+          {" "}
+          <img src={linkedIn} alt="icone linkedIn" />
+        </a>
+        <a href="https://www.facebook.com/">
+          <img src={facebook} alt="icone facebook" />
+        </a>
+        <a href="https://www.instagram.com/">
+          <img src={instagram} alt="icone instagram" />
+        </a>
       </div>
       <div className="cgu">
         {pathsCGU.map((path, index) => (
-          <NavLink className="navlink" key={`cgu-${path}`} to={path}>
+          <NavLink className="navlink" key={`cgv-${path}`} to={path}>
             {labelsCGU[index]}
           </NavLink>
         ))}
