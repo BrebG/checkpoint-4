@@ -3,6 +3,23 @@
 This project uses Harmonia. Harmonia is a framework meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
 It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
 
+This project intend to answer to the instructions given by the Wild Code School in the Checkpoint 4 quest. This quest intend to summarize the skills and knowledge that we learned during the 5 months of the formation by creating a fullstack project :
+
+- Create a product backlog
+- Create the DB model
+
+Front-end :
+- Create the wireframe of user interface web
+- Create static pages
+- Create dynamic pages
+
+Back-end :
+- Setup a relationnal database
+- Create components to access the SQL datas
+- Create server-side components
+
+You can find the wireframe, db model and product backlog in `./client/ressources`
+
 ## Setup & Use
 
 **Windows users:** be sure to run these commands in a git terminal to avoid [issues with newline formats](https://en.wikipedia.org/wiki/Newline#Issues_with_different_newline_formats):
@@ -16,6 +33,14 @@ git config --global core.autocrlf false
 - Clone this repo, enter it
 - Run command `npm install`
 - Create environment files (`.env`) in both `server` and `client`: you can copy `.env.sample` files as starters (**don't** delete them)
+- Run command `cd client` then `npm i`
+- Run command `cd ..`
+- Run command `cd server` then `npm i`
+- Run command `cd ..`
+- Run command `npm run db:migrate`
+- Run command `npm run dev`
+- CTRL+CLICK on the URL displayed by your CLI.
+- Enjoy !
 
 ### Available Commands
 
