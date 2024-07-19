@@ -4,8 +4,9 @@
   @include flex(column, center, center, $spacingDouble);
   padding-block: 2rem;
   min-height: calc(100dvh - 224px);
-  max-width: 100dvw;
+  max-width: 85ch;
   padding-inline: 1rem;
+  margin: 0 auto;
 
   h2 {
     font-size: $fontSize2;

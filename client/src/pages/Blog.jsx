@@ -118,6 +118,7 @@ function Consult() {
               title={section.title}
               category={section.category}
               content={section.content}
+              username={section.username}
               imageUrl={section.image_url}
               altText={section.alt_text}
               editMode={editMode}
